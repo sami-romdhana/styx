@@ -27,6 +27,14 @@
   outline: none;
 }
 
+.end {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 1em 0;
+  color: rgb(38, 144, 12);
+}
+
 .gameContainer {
   display: grid;
   gap: 1em;
@@ -37,7 +45,12 @@
   line-height: 1.4;
 }
 
-.description p + p {
+.description h2 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.description p {
   margin-top: 1em;
 }
 
