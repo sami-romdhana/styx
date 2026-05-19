@@ -1,5 +1,5 @@
 import { SteamApp } from "@/types";
-import { Game as GameComponent } from "@/components/Game";
+import { WordGame } from "@/components/games/WordGame";
 import { Header } from "@/components/Header";
 
 import data from "@/data.json";
@@ -10,7 +10,7 @@ export default async function Game() {
   return (
     <>
       <Header />
-      <GameComponent gameName={name} gameDescription={description} />
+      <WordGame gameName={name} gameDescription={description} />
     </>
   );
 }
