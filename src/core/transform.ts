@@ -1,7 +1,7 @@
 import parse from "@bbob/parser";
 
 export function transformBBCode(bbCode: string): string[] {
-  const parsed = parse(bbCode, {});
+  const parsed = parse(bbCode.replaceAll(/\{STEAM_APP_IMAGE\}[/a-zA-Z0-9.-_]+/g, ""), {});
 
   function loopOverNodes(part: any): string {
     if (typeof part === "object") {

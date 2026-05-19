@@ -37,6 +37,15 @@ const testCases: TestCase[] = [
       "All items from CS:GO moving forward to CS2",
     ],
   },
+  {
+    input:
+      "[img=http://STEAM_APP_IMAGE}/extras/Steam_angela.png fromclient=1]{STEAM_APP_IMAGE}/extras/Steam_angela.png[/img]\r\n\r\n[b][h2]“May you find your book in this place.”[/h2][/b]\r\n\r\nBecome the owner of the Library and receive your guests.\r\n\r\nYour librarians will fight for the Library.",
+    output: [
+      "“May you find your book in this place.”",
+      "Become the owner of the Library and receive your guests.",
+      "Your librarians will fight for the Library.",
+    ],
+  },
 ];
 
 testCases.forEach((testCase) => {
