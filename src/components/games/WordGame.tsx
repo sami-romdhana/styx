@@ -16,6 +16,7 @@ interface WordGameProps {
 
 export function WordGame(props: WordGameProps) {
   const [words, setWords] = useState(() => new Set<string>());
+  const [lastWord, setLastWord] = useState<string | null>(null);
 
   useEffect(() => {
     console.log(props);
@@ -49,6 +50,7 @@ export function WordGame(props: WordGameProps) {
               if (word.length === 0) return;
 
               setWords((words) => words.union(new Set([word])));
+              setLastWord(word);
             }}
           />
         </div>
@@ -62,6 +64,7 @@ export function WordGame(props: WordGameProps) {
                 <Word
                   content={word.content}
                   revealed={word.type === "punctuation" || words.has(word.key)}
+                  highlighted={word.type === "text" && word.key === lastWord}
                 />
               </Fragment>
             ))}
@@ -74,6 +77,7 @@ export function WordGame(props: WordGameProps) {
                   <Word
                     content={word.content}
                     revealed={word.type === "punctuation" || words.has(word.key)}
+                    highlighted={word.type === "text" && word.key === lastWord}
                   />
                 </Fragment>
               ))}
