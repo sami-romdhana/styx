@@ -44,8 +44,11 @@ export function WordGame(props: WordGameProps) {
               const target = event.target as HTMLInputElement;
               const word = target.value.trim().toLowerCase();
 
-              setWords((words) => words.union(new Set([word])));
               target.value = "";
+
+              if (word.length === 0) return;
+
+              setWords((words) => words.union(new Set([word])));
             }}
           />
         </div>
