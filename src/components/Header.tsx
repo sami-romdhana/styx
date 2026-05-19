@@ -24,7 +24,7 @@ export function Header() {
       <nav className={styles.middleRow}>
         <div className={width.wrapper}>
           <a href="/" className={classNames(pathname === "/" && styles.active)}>
-            Daily
+            Unlimited
           </a>
           <a
             href="/rising-tide"
