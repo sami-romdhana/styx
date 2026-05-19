@@ -1,11 +1,13 @@
 "use client";
 
 import { Fragment, useEffect, useState } from "react";
+import classNames from "classnames";
 import { parseText } from "@/core/parse";
 import { transformBBCode } from "@/core/transform";
 import { Word } from "./Word";
 
 import styles from "./Game.module.css";
+import width from "@/styles/width.module.css";
 
 interface GameProps {
   gameName: string;
@@ -25,7 +27,7 @@ export function Game(props: GameProps) {
   const gameIsWon = parsedGameName.filter((w) => w.type === "text").every((w) => words.has(w.key));
 
   return (
-    <div className={styles.container}>
+    <div className={classNames(width.wrapper, styles.container)}>
       {gameIsWon ? (
         <div className={styles.end}>You won!</div>
       ) : (
